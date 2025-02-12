@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2018 at 09:34 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.1.15
+-- Generation Time: Feb 12, 2025 at 09:04 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -36,14 +35,14 @@ CREATE TABLE `admin` (
   `lastname` varchar(50) NOT NULL,
   `photo` varchar(200) NOT NULL,
   `created_on` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `firstname`, `lastname`, `photo`, `created_on`) VALUES
-(1, 'srijan', '$2y$10$fCOiMky4n5hCJx3cpsG20Od4wHtlkCLKmO6VLobJNRIg9ooHTkgjK', 'Neovic', 'Devierte', 'facebook-profile-image.jpeg', '2018-04-30');
+(1, 'srijan', '$2y$10$fCOiMky4n5hCJx3cpsG20Od4wHtlkCLKmO6VLobJNRIg9ooHTkgjK', 'Srijan', 'Adhikari', 'SrijanPP.jpg', '2018-04-30');
 
 -- --------------------------------------------------------
 
@@ -59,30 +58,15 @@ CREATE TABLE `attendance` (
   `status` int(1) NOT NULL,
   `time_out` time NOT NULL,
   `num_hr` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `attendance`
 --
 
 INSERT INTO `attendance` (`id`, `employee_id`, `date`, `time_in`, `status`, `time_out`, `num_hr`) VALUES
-(13, 1, '2018-04-27', '08:00:00', 1, '17:00:00', 8),
-(14, 1, '2018-04-28', '08:00:00', 1, '17:00:00', 8),
-(15, 1, '2018-05-04', '08:00:00', 1, '17:00:00', 8),
-(16, 1, '2018-05-02', '08:00:00', 1, '17:00:00', 8),
-(17, 1, '2018-05-01', '08:00:00', 1, '17:00:00', 8),
-(18, 1, '2018-05-03', '08:00:00', 1, '17:00:00', 8),
-(74, 1, '2018-04-30', '08:00:00', 1, '16:44:23', 7.7333333333333),
-(75, 3, '2018-04-18', '08:00:00', 1, '17:00:00', 8),
-(76, 4, '2018-04-19', '08:00:00', 1, '17:00:00', 8),
-(77, 4, '2018-04-27', '08:00:00', 1, '17:00:00', 7),
-(78, 4, '2018-04-28', '08:00:00', 1, '17:00:00', 8),
-(79, 4, '2018-05-01', '08:30:00', 1, '17:00:00', 8),
-(80, 4, '2018-05-03', '08:00:00', 1, '17:00:00', 0),
-(81, 4, '2018-05-05', '08:00:00', 1, '17:00:00', 9),
-(83, 4, '2018-05-31', '08:00:00', 1, '18:00:00', 8),
-(84, 4, '2018-05-18', '08:00:00', 1, '17:00:00', 7),
-(85, 4, '2018-05-09', '09:00:00', 1, '18:00:00', 8);
+(86, 5, '2025-02-12', '10:31:02', 0, '13:34:59', 3.05),
+(87, 0, '2025-02-12', '08:57:18', 1, '00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -95,15 +79,7 @@ CREATE TABLE `cashadvance` (
   `date_advance` date NOT NULL,
   `employee_id` varchar(15) NOT NULL,
   `amount` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cashadvance`
---
-
-INSERT INTO `cashadvance` (`id`, `date_advance`, `employee_id`, `amount`) VALUES
-(2, '2018-05-02', '1', 1000),
-(3, '2018-05-02', '1', 1000);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -115,16 +91,7 @@ CREATE TABLE `deductions` (
   `id` int(11) NOT NULL,
   `description` varchar(100) NOT NULL,
   `amount` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `deductions`
---
-
-INSERT INTO `deductions` (`id`, `description`, `amount`) VALUES
-(1, 'SSS', 100),
-(2, 'Pagibig', 150),
-(3, 'PhilHealth', 150);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -145,16 +112,15 @@ CREATE TABLE `employees` (
   `schedule_id` int(11) NOT NULL,
   `photo` varchar(200) NOT NULL,
   `created_on` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `employees`
 --
 
 INSERT INTO `employees` (`id`, `employee_id`, `firstname`, `lastname`, `address`, `birthdate`, `contact_info`, `gender`, `position_id`, `schedule_id`, `photo`, `created_on`) VALUES
-(1, 'ABC123456789', 'Neovic', 'Devierte', 'Brgy. Mambulac, Silay City', '2018-04-02', '09092735719', 'Male', 1, 2, 'desktop.jpg', '2018-04-28'),
-(3, 'DYE473869250', 'Julyn', 'Divinagracia', 'E.B. Magalona', '1992-05-02', '09123456789', 'Female', 2, 2, '', '2018-04-30'),
-(4, 'JIE625973480', 'Gemalyn', 'Cepe', 'Carmen, Bohol', '1995-10-02', '09468029840', 'Female', 2, 3, '', '2018-04-30');
+(5, 'MFH065712438', 'Ashutosh', 'Rijal', 'Kathmandu', '2025-02-26', '9856412354', 'Male', 1, 1, '471312113_885068340375933_8194866271038641689_n.jpg', '2025-02-12'),
+(6, 'KVZ410798526', 'Srijan', 'Adhikari', 'kathmandu', '2025-02-12', '9856412354', 'Male', 2, 3, 'SrijanPP.jpg', '2025-02-12');
 
 -- --------------------------------------------------------
 
@@ -168,7 +134,7 @@ CREATE TABLE `overtime` (
   `hours` double NOT NULL,
   `rate` double NOT NULL,
   `date_overtime` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -180,7 +146,7 @@ CREATE TABLE `position` (
   `id` int(11) NOT NULL,
   `description` varchar(150) NOT NULL,
   `rate` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `position`
@@ -200,7 +166,7 @@ CREATE TABLE `schedules` (
   `id` int(11) NOT NULL,
   `time_in` time NOT NULL,
   `time_out` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `schedules`
@@ -278,7 +244,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `cashadvance`
@@ -296,7 +262,7 @@ ALTER TABLE `deductions`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `overtime`
@@ -320,3 +286,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
