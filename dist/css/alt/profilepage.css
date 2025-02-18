@@ -1,0 +1,30 @@
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.profile-img {
+    width: 150px; /* Increase size for better visibility */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #3498db; /* Adds a stylish border */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profile-img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile-name {
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
