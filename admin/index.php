@@ -8,7 +8,7 @@
 <body class="hold-transition login-page" style="background: linear-gradient(135deg, #667eea, #764ba2);">
 <div class="login-box" style="border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); background: white; padding: 20px;">
    <div class="login-logo">
-   <img src="https://w7.pngwing.com/pngs/473/130/png-transparent-payroll-business-human-resource-logo-sales-business-text-service-people-thumbnail.png" style="width: 300px; border-radius: 0%;">
+   <img src="https://nid.com.np/wp-content/uploads/2025/02/logo.png" style="width: 300px; border-radius: 0%;">
       <b style="color: #333; font-size: 24px;">Admin Login</b>
    </div>
   

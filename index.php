@@ -4,7 +4,9 @@
   <div class="login-box">
     <div class="login-logo">
       <img src="images\logo.png" alt="Company Logo" style="width: 300px; border-radius: 0%;">
-      <h1 class="text-white">Welcome to Attendance Portal</h1>
+      <h1 class="text-white" style="font-weight: bold;">Welcome to TrackSmart Attendance Portal</h1>
+
+
       <p id="date" class="text-white"></p>
       <p id="time" class="bold text-white"></p>
     </div>
